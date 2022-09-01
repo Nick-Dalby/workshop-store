@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
