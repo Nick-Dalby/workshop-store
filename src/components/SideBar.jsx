@@ -1,14 +1,41 @@
-import logo from '../assets/logo.svg'
-import { Link } from 'react-router-dom'
-import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
-import { links } from '../utils/constants'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import CartButtons from './CartButtons'
+import logo from '../assets/logo.svg'
+import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
+import { links } from '../utils/constants'
+import CartButtons from './CartButtons'
 
 const Sidebar = () => {
-  return <h4>sidebar</h4>
+  const { isSidebarOpen, closeSidebar } = useProductsContext()
+  
+
+  return (
+    <SidebarContainer>
+      <aside className={`${isSidebarOpen ? 'sidebar show-sidebar' : 'sidebar'}`}>
+        <div className="sidebar-header">
+          <img src={logo} alt="the store logo" className="logo" />
+          <button className="close-btn" type="button" onClick={closeSidebar}>
+            <FaTimes />
+          </button>
+        </div>
+        <ul className="links">
+          {links.map(({ id, text, url }) => {
+            return (
+              <li key={id}>
+                <Link to={url} onClick={closeSidebar}>{text}</Link>
+              </li>
+            )
+          })}
+          <li>
+            <Link to="/checkout" onClick={closeSidebar}>checkout</Link>
+          </li>
+        </ul>
+        <CartButtons />
+      </aside>
+    </SidebarContainer>
+  )
 }
 
 const SidebarContainer = styled.div`

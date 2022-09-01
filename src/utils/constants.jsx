@@ -1,5 +1,7 @@
 import React from 'react'
 import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+
+// more pages? ...add them here but may need to edit the css
 export const links = [
   {
     id: 1,
