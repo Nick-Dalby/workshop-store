@@ -14,7 +14,9 @@ import {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
+    <Navbar />
+    <Sidebar />
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
@@ -28,6 +30,7 @@ function App() {
           }/>
         <Route path="/*" element={<Error />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
   )
 }
