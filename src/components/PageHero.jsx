@@ -1,7 +1,13 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-const PageHero = () => {
-  return <h4>page hero</h4>
+const PageHero = ({ title }) => {
+  return <Wrapper>
+    <div className="section-center">
+      <h3>
+        <Link to='/'>Home</Link> / {title}
+      </h3>
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
@@ -13,7 +19,7 @@ const Wrapper = styled.section`
 
   color: var(--clr-primary-1);
   a {
-    color: var(--clr-primary-3);
+    color: var(--clr-primary-6);
     padding: 0.5rem;
     transition: var(--transition);
   }

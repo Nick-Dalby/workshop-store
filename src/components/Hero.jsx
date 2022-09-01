@@ -1,10 +1,20 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpeg'
-import heroBcg2 from '../assets/hero-bcg-2.jpeg'
+import heroBcg from '../assets/hero-bcg.jpg'
+import heroBcg2 from '../assets/hero-bcg-2.jpg'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return <Wrapper className='section-center'>
+    <article className='content'>
+      <h1>wood is good</h1>
+      <p>do you respect wood?</p>
+      <Link to='/products' className='btn hero-btn'>shop now</Link>
+    </article>
+    <article className='img-container'>
+      <img src={heroBcg} alt="good wood" className='main-img'/>
+      <img src={heroBcg2} alt="nice wood" className='accent-img'/>
+    </article>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
@@ -61,7 +71,7 @@ const Wrapper = styled.section`
       position: absolute;
       width: 10%;
       height: 80%;
-      background: var(--clr-primary-9);
+      background: var(--clr-primary-4);
       bottom: 0%;
       left: -8%;
       border-radius: var(--radius);

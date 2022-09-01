@@ -1,5 +1,6 @@
 import React from 'react'
-import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+import { GrTools, GrTreeOption } from 'react-icons/gr'
+import { TbHeartHandshake } from 'react-icons/tb'
 
 // more pages? ...add them here but may need to edit the css
 export const links = [
@@ -23,20 +24,20 @@ export const links = [
 export const services = [
   {
     id: 1,
-    icon: <GiCompass />,
-    title: 'mission',
+    icon: <GrTools />,
+    title: 'hand crafted',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
   {
     id: 2,
-    icon: <GiDiamondHard />,
-    title: 'vision',
+    icon: <GrTreeOption />,
+    title: 'sustainable',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
   {
     id: 3,
-    icon: <GiStabbedNote />,
-    title: 'history',
+    icon: <TbHeartHandshake />,
+    title: 'fair',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
   },
 ]

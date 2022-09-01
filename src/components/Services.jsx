@@ -2,7 +2,34 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return (
+    <Wrapper>
+      <div className="section-center">
+        <article className="header">
+          <h3>
+            custom designs
+            <br />
+            made to measure
+          </h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
+            error vitae, earum maxime, est quasi, officiis numquam praesentium
+            veritatis assumenda dolorum obcaecati aliquam? Est, voluptatum?
+          </p>
+        </article>
+        <div className="services-center">
+          {services.map((service) => {
+            const { id, icon, title, text } = service
+            return <article key={id} className='service'>
+              <span className='icon'>{icon}</span>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </article>
+          })}
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -28,7 +55,8 @@ const Wrapper = styled.section`
     gap: 2.5rem;
   }
   .service {
-    background: var(--clr-primary-7);
+    border: 2px solid var(--clr-primary-1);
+    background: var(--clr-primary-10);
     text-align: center;
     padding: 2.5rem 2rem;
     border-radius: var(--radius);
@@ -44,6 +72,7 @@ const Wrapper = styled.section`
     place-items: center;
     margin-bottom: 1rem;
     border-radius: 50%;
+    border: 2px solid var(--clr-primary-1);
     background: var(--clr-primary-10);
     color: var(--clr-primary-1);
     svg {
