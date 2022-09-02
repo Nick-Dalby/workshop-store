@@ -53,6 +53,7 @@ const NavContainer = styled.nav`
     align-items: center;
     justify-content: space-between;
     img {
+      margin-top: 1rem;
       width: 175px;
       margin-left: -15px;
     }

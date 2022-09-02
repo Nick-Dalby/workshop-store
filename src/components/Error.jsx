@@ -1,5 +1,9 @@
 const Error = () => {
-  return <h4>error element</h4>
+  return (
+    <div className="section section-center text-center">
+     <h2>oops, an error occured...</h2>
+    </div>
+  )
 }
 
 export default Error
