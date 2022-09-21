@@ -1,6 +1,6 @@
-import { useFilterContext } from '../context/filter_context'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
+import { useFilterContext } from '../context/filter_context'
 const Sort = () => {
   return <h4>sort </h4>
 }

@@ -8,7 +8,7 @@ import {
   Home,
   PrivateRoute,
   Products,
-  SingleProduct,
+  SingleProduct
 } from './pages'
 
 function App() {

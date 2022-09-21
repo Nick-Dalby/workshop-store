@@ -6,7 +6,7 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
   GET_SINGLE_PRODUCT_SUCCESS,
   SIDEBAR_CLOSE,
-  SIDEBAR_OPEN,
+  SIDEBAR_OPEN
 } from '../actions'
 
 const products_reducer = (state, action) => {
@@ -33,6 +33,17 @@ const products_reducer = (state, action) => {
   if (action.type === GET_PRODUCTS_ERROR) {
     return { ...state, productsLoading: false, productsError: true }
   }
+
+  if (action.type === GET_SINGLE_PRODUCT_BEGIN) {
+    return { ...state, singleProductLoading: true, singleProductError: false}
+  }
+  if (action.type === GET_SINGLE_PRODUCT_SUCCESS) {
+    return { ...state, singleProductLoading: false, singleProduct: action.payload}
+  }
+  if (action.type === GET_SINGLE_PRODUCT_ERROR) {
+    return { ...state, singleProductLoading: false, singleProductError: true}
+  }
+
   throw new Error(`No Matching "${action.type}" - action type`)
 }
 

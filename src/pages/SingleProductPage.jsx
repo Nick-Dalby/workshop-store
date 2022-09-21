@@ -7,14 +7,88 @@ import {
   Loading,
   PageHero,
   ProductImages,
-  Stars,
+  Stars
 } from '../components'
 import { useProductsContext } from '../context/products_context'
 import { single_product_url as url } from '../utils/constants'
 import { formatPrice } from '../utils/helpers'
 
 const SingleProductPage = () => {
-  return <h4>single product page</h4>
+  const { id } = useParams()
+  const navigate = useNavigate()
+  const {
+    singleProductLoading: loading,
+    singleProductError: error,
+    singleProduct: product,
+    getSingleProduct,
+  } = useProductsContext()
+
+  useEffect(() => {
+    getSingleProduct(`${url}${id}`)
+  }, [id])
+
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        navigate('/')
+      }, 3000)
+    }
+  }, [error])
+
+  if (loading) {
+    return <Loading />
+  }
+
+  if (error) {
+    return <Error />
+  }
+
+  const {
+    name,
+    price,
+    description,
+    stock,
+    stars,
+    id: sku,
+    reviews,
+    company,
+    images,
+  } = product
+
+  return (
+    <Wrapper>
+      <PageHero title={name} product={product} />
+      <div className="section section-center">
+        <Link to="/products" className="btn">
+          back to products
+        </Link>
+        <div className="product-center">
+          <ProductImages images={images} />
+          <section className="content">
+            <h2>{name}</h2>
+            <Stars stars={stars} reviews={reviews} />
+            <h5 className="price">{formatPrice(price)}</h5>
+            <p className="desc">{description}</p>
+            <p className="info">
+              <span>Available:</span>
+              {stock > 0 ? 'in stock' : 'out of stock'}
+            </p>
+            <p className="info">
+              <span>SKU:</span>
+              {sku}
+            </p>
+            <p className="info">
+              <span>Brand:</span>
+              {company}
+            </p>
+            <hr />
+
+            {stock > 0 && <AddToCart />}
+          </section>
+        </div>
+      </div>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.main`

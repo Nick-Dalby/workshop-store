@@ -1,20 +1,24 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import heroBcg from '../assets/hero-bcg.jpg'
+import styled from 'styled-components'
 import heroBcg2 from '../assets/hero-bcg-2.jpg'
+import heroBcg from '../assets/hero-bcg.jpg'
 
 const Hero = () => {
-  return <Wrapper className='section-center'>
-    <article className='content'>
-      <h1>wood is good</h1>
-      <p>do you respect wood?</p>
-      <Link to='/products' className='btn hero-btn'>shop now</Link>
-    </article>
-    <article className='img-container'>
-      <img src={heroBcg} alt="good wood" className='main-img'/>
-      <img src={heroBcg2} alt="nice wood" className='accent-img'/>
-    </article>
-  </Wrapper>
+  return (
+    <Wrapper className="section-center">
+      <article className="content">
+        <h1>wood is good</h1>
+        <p>do you respect wood?</p>
+        <Link to="/products" className="btn hero-btn">
+          shop now
+        </Link>
+      </article>
+      <article className="img-container">
+        <img src={heroBcg} alt="good wood" className="main-img" />
+        <img src={heroBcg2} alt="nice wood" className="accent-img" />
+      </article>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -32,7 +36,7 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
     font-size: 1rem;
   }
-  @media (min-width: 992px) {
+  @media (min-width: 700px) {
     height: calc(100vh - 5rem);
     grid-template-columns: 1fr 1fr;
     gap: 8rem;

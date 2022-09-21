@@ -1,8 +1,8 @@
-import { FiUser, FiShoppingCart, FiUserPlus, FiUserMinus } from 'react-icons/fi'
+import { FiShoppingCart, FiUser, FiUserMinus, FiUserPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { useProductsContext } from '../context/products_context'
 import { useCartContext } from '../context/cart_context'
+import { useProductsContext } from '../context/products_context'
 import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
