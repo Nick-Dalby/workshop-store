@@ -1,8 +1,47 @@
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
+import products_reducer from '../reducers/products_reducer'
+
 const Sort = () => {
-  return <h4>sort </h4>
+  const {
+    filtered_products: products_reducer,
+    grid_view,
+    setGridView,
+    setListView,
+    sort,
+    updateSort,
+  } = useFilterContext()
+
+  return (
+    <Wrapper>
+      <div className="btn-container">
+        <button type="button" className={`${grid_view ? 'active' : null}`}>
+          <BsFillGridFill onClick={setGridView} />
+        </button>
+        <button type="button" className={`${!grid_view ? 'active' : null}`}>
+          <BsList onClick={setListView} />
+        </button>
+      </div>
+      <p>{products_reducer.length} products found</p>
+      <hr />
+      <form>
+        <label htmlFor="sort">sort by</label>
+        <select
+          name="sort"
+          id="sort"
+          className="sort-input"
+          value={sort}
+          onChange={updateSort}
+        >
+          <option value="price-lowest">lowest price</option>
+          <option value="price-highest">highest price</option>
+          <option value="name-a">by name (a-z)</option>
+          <option value="name-z">by name (z-a)</option>
+        </select>
+      </form>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.section`
@@ -40,7 +79,7 @@ const Wrapper = styled.section`
       border: 1px solid var(--clr-black);
       color: var(--clr-black);
       width: 1.5rem;
-      border-radius: var(--radius);
+      border-radius: var(--radius-1);
       height: 1.5rem;
       display: flex;
       align-items: center;
@@ -59,12 +98,14 @@ const Wrapper = styled.section`
   .sort-input {
     border-color: transparent;
     font-size: 1rem;
-    text-transform: capitalize;
+    color: var(--clr-primary-2);
     padding: 0.25rem 0.5rem;
+    background-color: var(--clr-grey-9);
+    border-radius: var(--radius-1);
+    margin-left: var(--spacing-1);
   }
   label {
     font-size: 1rem;
-    text-transform: capitalize;
   }
 `
 

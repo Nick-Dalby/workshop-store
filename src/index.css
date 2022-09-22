@@ -14,14 +14,14 @@ Variables
   /* --clr-primary-5: hsl(22, 31%, 52%); */
   --clr-primary-5: hsl(34, 6%, 24%);
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(37, 5%, 50%);
-  --clr-primary-7: hsl(38, 9%, 64%);
+  --clr-primary-6: hsl(0, 0%, 41%);
+  --clr-primary-7: hsl(0, 0%, 78%);
   --clr-primary-8: hsl(38, 16%, 76%);
   --clr-primary-9: hsl(41, 24%, 87%);
   --clr-primary-10: hsl(0, 0%, 96%);
 
-  --accent-orange: hsl(17,83%, 54%);
-  
+  --accent-orange: hsl(17, 83%, 54%);
+
   /* darkest grey - used for headings */
   --clr-grey-1: hsl(209, 61%, 16%);
   --clr-grey-2: hsl(211, 39%, 23%);
@@ -40,9 +40,12 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
+  --transition-fast: all 150ms linear;
   --transition: all 250ms linear;
   --spacing: 0.1rem;
+  --spacing-1: 0.25rem;
   --radius: 0rem;
+  --radius-1: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
@@ -178,7 +181,7 @@ p {
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 400;
-  transition: var(--transition);
+  transition: var(--transition-fast);
   font-size: 0.875rem;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);

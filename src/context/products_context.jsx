@@ -8,7 +8,7 @@ import {
   GET_SINGLE_PRODUCT_ERROR,
   GET_SINGLE_PRODUCT_SUCCESS,
   SIDEBAR_CLOSE,
-  SIDEBAR_OPEN
+  SIDEBAR_OPEN,
 } from '../actions'
 import reducer from '../reducers/products_reducer'
 import { products_url as url } from '../utils/constants'
@@ -73,6 +73,4 @@ export const ProductsProvider = ({ children }) => {
   )
 }
 // make sure use
-export const useProductsContext = () => {
-  return useContext(ProductsContext)
-}
+export const useProductsContext = () => useContext(ProductsContext)

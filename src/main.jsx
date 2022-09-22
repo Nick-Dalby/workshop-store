@@ -12,7 +12,9 @@ import { UserProvider } from './context/user_context'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ProductsProvider>
-      <App />
+      <FilterProvider>
+        <App />
+      </FilterProvider>
     </ProductsProvider>
   </React.StrictMode>
 )
