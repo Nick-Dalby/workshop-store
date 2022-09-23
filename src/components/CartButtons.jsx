@@ -7,20 +7,22 @@ import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
   const { closeSidebar } = useProductsContext()
-
+  const { total_items } = useCartContext()
 
   return (
-    <Wrapper className='cart-btn-wrapper'>
-      <Link to='/cart' className='cart-btn' onClick={closeSidebar}>
+    <Wrapper className="cart-btn-wrapper">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
           <FiShoppingCart />
-          <span className="cart-value">
-            12
-          </span>
+          {total_items > 0 ? (
+            <span className="cart-value">
+              <span>{total_items}</span>
+            </span>
+          ) : null}
         </span>
       </Link>
-      <button type='button' className='auth-btn'>
+      <button type="button" className="auth-btn">
         Login <FiUser />
       </button>
     </Wrapper>
@@ -56,8 +58,8 @@ const Wrapper = styled.div`
     top: -10px;
     right: -16px;
     background: var(--accent-orange);
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,6 +67,9 @@ const Wrapper = styled.div`
     font-size: 0.75rem;
     color: var(--clr-white);
     padding: 12px;
+    span {
+      margin-left: 1px;
+    }
   }
   .auth-btn {
     display: flex;

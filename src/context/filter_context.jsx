@@ -92,5 +92,5 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   )
 }
-// make sure use
+// make sure to use
 export const useFilterContext = () => useContext(FilterContext)
