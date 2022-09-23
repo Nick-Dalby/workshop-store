@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-const Footer = () => {
-  return (
-    <Wrapper>
-      <h5>&copy; {new Date().getFullYear()} <span>workshop</span></h5>
-      <h5>All rights reserved | Impressum</h5>
-    </Wrapper>
-  )
-}
+
+const Footer = () => (
+  <Wrapper>
+    <h5>
+      &copy; {new Date().getFullYear()} <span>workshop</span>
+    </h5>
+    <h5>All rights reserved | Impressum</h5>
+  </Wrapper>
+)
 
 const Wrapper = styled.footer`
   height: 5rem;

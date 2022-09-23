@@ -37,5 +37,5 @@ export {
   Stars,
   CartContent,
   PageHero,
-  StripeCheckout
+  StripeCheckout,
 }

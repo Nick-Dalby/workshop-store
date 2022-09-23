@@ -31,6 +31,9 @@ const FeaturedProducts = () => {
           ))}
         </div>
       </div>
+      <Link to="/products" className="btn">
+        all products
+      </Link>
     </Wrapper>
   )
 }
@@ -47,7 +50,7 @@ const Wrapper = styled.section`
   }
   .btn {
     display: block;
-    width: 148px;
+    width: fit-content;
     margin: 0 auto;
     text-align: center;
   }
