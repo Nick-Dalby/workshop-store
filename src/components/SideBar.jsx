@@ -7,7 +7,7 @@ import { useUserContext } from '../context/user_context'
 import { links } from '../utils/constants'
 import CartButtons from './CartButtons'
 
-const Sidebar = () => {
+const SideBar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext()
   const { myUser } = useUserContext()
 
@@ -115,4 +115,4 @@ const SidebarContainer = styled.div`
   }
 `
 
-export default Sidebar
+export default SideBar

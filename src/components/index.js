@@ -13,7 +13,7 @@ import PageHero from './PageHero'
 import ProductImages from './ProductImages'
 import ProductList from './ProductList'
 import Services from './Services'
-import Sidebar from './Sidebar'
+import SideBar from './SideBar'
 import Sort from './Sort'
 import Stars from './Stars'
 import StripeCheckout from './StripeCheckout'
@@ -23,7 +23,7 @@ export {
   Navbar,
   CartButtons,
   Footer,
-  Sidebar,
+  SideBar,
   Hero,
   Services,
   Contact,

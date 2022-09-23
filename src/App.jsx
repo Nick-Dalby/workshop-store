@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Footer, Navbar, Sidebar } from './components'
+import { Footer, Navbar, SideBar } from './components'
 import {
   About,
   Cart,
@@ -17,7 +17,7 @@ function App() {
     <AuthWrapper>
       <BrowserRouter>
         <Navbar />
-        <Sidebar />
+        <SideBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
