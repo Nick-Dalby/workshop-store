@@ -12,6 +12,7 @@ React e-commerce with Stripe integration
 **Tech used:** HTML, CSS, JavaScript, React, Auth0, Stripe, Styled-components
 
 React e-commerce with Stripe payments and Auth0 for user log-in and sign-up
+
 Features:
 
 - sidebar navigation
